@@ -13,31 +13,19 @@ using Graph = vector<vector<int>>;
 #define rep(...) OVERLOAD_REP(__VA_ARGS__, REP2, REP1)(__VA_ARGS__)
 
 int main() {
-  int n, m, other;
-  cin >> n >> m;
+  int n, p, q;
+  cin >> n >> p >> q;
 
-  vector<string> v(n);
-  rep(i, n) { cin >> v[i]; }
+  int d[n];
 
-  vector<string> v2(m);
-  rep(i, m) { cin >> v2[i]; }
-
-  map<string, int> mp;
-  int tmp;
-  cin >> other;
-  rep(i, m) {
-    cin >> tmp;
-    mp[v2[i]] = tmp;
-  }
-
-  int ans = 0;
   rep(i, n) {
-    if (mp.count(v[i]) == 0) {
-      ans += other;
-    } else {
-      ans += mp[v[i]];
+    cin >> d[i];
+    // cout << d[i] + q << endl;
+    if (d[i] + q < p) {
+      // cout << "kita" << endl;
+      p = d[i] + q;
     }
   }
 
-  cout << ans << endl;
+  cout << p << endl;
 }
