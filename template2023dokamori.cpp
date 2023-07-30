@@ -51,5 +51,9 @@ int main() {
   // 2×2×2で全要素が0のvectorを作成
   auto b = make_vec<int>({2, 2, 2});
 
-  cout << "" << endl;
+  // deque (=Double-Ended queue).
+  // 先頭・末尾の、参照・追加・削除がO(1).
+  // https://qiita.com/gnbrganchan/items/616f3701b1169e834565
+  deque<int> dq;
+  cout << dq.front() << dq.back();  // 表示
 }
