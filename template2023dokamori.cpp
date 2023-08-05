@@ -1,3 +1,4 @@
+// GCCに含まれる機能.
 #include <bits/stdc++.h>
 
 #include <atcoder/modint>
