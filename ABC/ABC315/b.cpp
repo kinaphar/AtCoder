@@ -13,18 +13,26 @@ using Graph = vector<vector<int>>;
 #define rep(...) OVERLOAD_REP(__VA_ARGS__, REP2, REP1)(__VA_ARGS__)
 
 int main() {
-  int n;
-  cin >> n;
+  int m;
+  int sum = 0;
+  vector<int> d(101);
 
-  string s;
-  cin >> s;
+  cin >> m;
 
-  vector<int> a{1, 3, 2};
+  rep(i, 1, m + 1) {
+    cin >> d[i];
+    sum += d[i];
+  }
 
-  int tmp;
-  rep(i, n) { cin >> tmp; }
-  rep(i, 1, n) { cin >> tmp; }
-  rep(i, a.begin(), a.end()) { cin >> tmp; }
+  sum /= 2;
+  sum++;
 
-  cout << "" << endl;
+  rep(i, 1, m + 1) {
+    if (d[i] >= sum) {
+      cout << i << " " << sum << endl;
+      break;
+    } else {
+      sum -= d[i];
+    }
+  }
 }

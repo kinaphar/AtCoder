@@ -16,15 +16,22 @@ int main() {
   int n;
   cin >> n;
 
-  string s;
-  cin >> s;
+  rep(i, 0, n + 1) {
+    bool flag = true;
+    rep(j, 1, 10) {
+      if (n % j == 0) {
+        if (i % (n / j) == 0) {
+          // cout << n << " " << j << endl;
+          cout << j;
+          flag = false;
+          break;
+        }
+      }
+    }
+    if (flag) {
+      cout << "-";
+    }
+  }
 
-  vector<int> a{1, 3, 2};
-
-  int tmp;
-  rep(i, n) { cin >> tmp; }
-  rep(i, 1, n) { cin >> tmp; }
-  rep(i, a.begin(), a.end()) { cin >> tmp; }
-
-  cout << "" << endl;
+  cout << endl;
 }
