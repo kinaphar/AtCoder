@@ -50,7 +50,7 @@ int main() {
       if (visit[nv] != 0) continue;  // すでに発見済みの頂点は探索しない
       visit[nv] = 1;
       pos[nv].first = pos[v].first + info[{v, nv}].first;
-      pos[nv].second = pos[v].second + info[{v, nv}].second;
+      pos[nv].second = pos[v].first + info[{v, nv}].second;
       que.push(nv);
     }
   }
